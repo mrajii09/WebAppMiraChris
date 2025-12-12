@@ -1,10 +1,16 @@
+# Title: VitelloWeb
+# Authors: Miraj Acharya, Christopher Shane Rocco Vitello
+# December 2025
+
 from flask import Flask, render_template, redirect, url_for
+import sqlalchemy
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return '<h1>ORDER AWAY<h1>\n This is an order app.'
+    return render_template("home.html")
 
 @app.route('/admin')
 def admin():
