@@ -1,0 +1,22 @@
+<!-- Base of other files -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}VitelloWeb{% endblock %}</title>
+    <!--Ask Flask to generate the correct URL for style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class = "navbar">
+    <a href="/">home</a>
+    <a href="/about">about</a>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
