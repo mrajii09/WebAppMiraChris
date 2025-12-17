@@ -3,15 +3,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}VitelloWeb{% endblock %}</title>
+    <title>{% block title %} VitelloWeb {% endblock %}</title>
     <!--Ask Flask to generate the correct URL for style.css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <nav class = "navbar">
-    <a href="/">home</a>
-    <a href="/about">about</a>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href = "/">Purchases</a>
+    <a href = "/login">Log In</a>
 </nav>
 
 <div class="content">
