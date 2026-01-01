@@ -6,6 +6,16 @@
     <title>{% block title %} VitelloWeb {% endblock %}</title>
     <!--Ask Flask to generate the correct URL for style.css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        nav {
+        border-radius: 15px;
+        border: 2px black;
+        background-color: lightblue;
+        justify-content: center;
+        display: flex;
+        gap: 40px;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,6 +24,7 @@
     <a href="/about">About</a>
     <a href = "/purchases">Purchases</a>
     <a href = "/login">Log In</a>
+    <a>{{ role }}</a>
 </nav>
 
 <div class="content">

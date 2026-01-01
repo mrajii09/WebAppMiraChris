@@ -1,12 +1,6 @@
-<!doctype html>
 {% extends "base.html" %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> {% block title %} Login | VitelloWeb {% endblock %} </title>
-</head>
-<body>
+    {% block title %} Login | VitelloWeb {% endblock %}
+
 {% block content %}
     <h1>Login</h1>
     <form method = "POST">
@@ -25,6 +19,7 @@
         <button type = "submit">Log In</button>
 
     </form>
+    <a href = "signup.html">New? Sign Up.</a>
 
     <!-- Jinja, if an error, print value error -->
     {% if error %}
@@ -32,5 +27,3 @@
     {% endif %}
 
 {% endblock %}
-</body>
-</html>

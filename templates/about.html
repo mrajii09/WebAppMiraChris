@@ -1,33 +1,38 @@
-<!doctype html>
 {% extends "base.html" %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %} About | VitelloWeb{% endblock %}</title>
-    <style>
-        h1 {
-        color: red;
-        }
-    </style>
-</head>
-<body>
+    {% block title %} About | VitelloWeb{% endblock %}
 {% block content %}
 
-    <h1>VitelloWeb</h1>
+    <div class = "center-horizontally">
+        <h1>VitelloWeb</h1>
+    </div>
+
+        <div class = "center-text">
         <p>Welcome to the official Vitello store! <br>
         Feel free to place your orders!</p>
+        </div>
+
+
+    <div class = "center-horizontally">
     <h2>Next Steps</h2>
+    </div>
+        <div class = "center-text">
         <p>For your next step, simply head on over to the <br>
         purchase tag and custom-make your order. <br>
         These orders will be sent over to the Vitellos, <br>
         and you can pay them in <strong><em>cash</em></strong>.</p>
+        </div>
 
+
+    <div class = "center-horizontally">
     <h2>Fun Facts!</h2>
+    </div>
+
+
+    <div class = "center-text">
     <img src = "../static/Vitellos.png" alt = "Vitello Family" class = "float-left" width = "100">
+
     <p>Pictured are the two youngest sons of the Vitello family. <br>
         Fun fact: the rightmost son is Christopher Vitello, <br> who is the co-creator of this website.</p>
 
+    </div>
 {% endblock %}
-</body>
-</html>
