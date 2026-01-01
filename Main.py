@@ -79,10 +79,10 @@ def login():
             currentUser = username + " | Admin"
             #return "Hello Admin!" # To ensure the code ran correct
             return render_template("home.html", role = currentUser)
-        elif username in usernames:
+        elif User.query.filter_by(username=username).first():
+            user =User.query.filter_by(username=username).first()
             currentUser = username
-            indexUser = list.index(username)
-            if password == passwords[indexUser]:
+            if user and user.password == password:
                 #return "You're in!" # Ensures code runs correct
                 return render_template("home.html", role = currentUser)
         error = "Invalid username or password"

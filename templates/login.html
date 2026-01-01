@@ -19,7 +19,7 @@
         <button type = "submit">Log In</button>
 
     </form>
-    <a href = "signup.html">New? Sign Up.</a>
+    <a href = "{{ url_for('signup') }}">New? Sign Up.</a>
 
     <!-- Jinja, if an error, print value error -->
     {% if error %}
