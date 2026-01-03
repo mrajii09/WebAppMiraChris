@@ -80,7 +80,7 @@ def login():
             #return "Hello Admin!" # To ensure the code ran correct
             return render_template("home.html", role = currentUser)
         elif User.query.filter_by(username=username).first():
-            user =User.query.filter_by(username=username).first()
+            user = User.query.filter_by(username=username).first()
             currentUser = username
             if user and user.password == password:
                 #return "You're in!" # Ensures code runs correct
