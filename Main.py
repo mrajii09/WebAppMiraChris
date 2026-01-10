@@ -1,11 +1,12 @@
 # Title: VitelloWeb
-# Authors: Miraj Acharya, Christopher Shane Rocco Vitello
+# Authors: Miraj Acharya, Christopher Vitello
 # December 2025
 from os import remove
 
 from flask import Flask, render_template, request, redirect, url_for, session
 import flask_login
 from flask_sqlalchemy import *
+from flask_login import UserMixin, login_user, logout_user, current_user
 
 
 app = Flask(__name__)
@@ -39,9 +40,6 @@ currentUser = "Guest"
 
 # Just for the testing
 adminInfo = ["VitelloWeb", "CV0809"]
-
-usernames = ["User123456"]
-passwords = ["Password12"]
 
 
 
@@ -120,6 +118,13 @@ def signup():
 @app.route('/purchases')
 def purchase():
     return render_template("purchases.html", role = currentUser)
+
+@app.route('/recipe')
+def rec1():
+    return render_template("recipe.html", name = "recipe 1", role = currentUser)
+
+
+
 
 
 if __name__ == '__main__':

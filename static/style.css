@@ -37,3 +37,10 @@
     justify-content = "center";
 
 }
+
+.button{
+    margin-top: 30px;
+    width: 125px;
+    line-height: 5;
+    border: 2px solid black;
+}
