@@ -56,10 +56,6 @@ def about():
     return render_template("about.html", role = currentUser)
 
 
-@app.route('/admin')
-def admin():
-    return redirect(url_for("home"))
-
 # URL for login AND
 # had GET --> user opens page
 # and POST --> user submits form
@@ -115,13 +111,31 @@ def signup():
             return render_template("login.html", role = currentUser)
     return render_template("signup.html", error = error)
 
-@app.route('/purchases')
-def purchase():
-    return render_template("purchases.html", role = currentUser)
-
 @app.route('/recipe')
 def rec1():
-    return render_template("recipe.html", name = "recipe 1", role = currentUser)
+    return render_template("recipe.html",
+                           name = "Pizza",
+                           role = currentUser,
+                           bio = "Pizza",
+                           description = "This dish is cheese and a variety of other toppings cooked in a tomato sauce on top of a fluffy, bready crust.",
+                           topping = "Cheese",
+                           add = "Pepperoni", add1 = "Sausage", add2 = "Mushrooms", add3 = "Spinach",
+                           mod = "Change to white Pie", mod1 = "Change to margherita pie", mod2 = "Buffallo Sauce", mod3 = "Hot Sauce",
+                           link = "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*")
+
+if admin:
+    @app.route('/admin')
+    def admin():
+        return render_template("admin.html", role = currentUser)
+
+
+@app.route('/cart')
+def cart():
+    toppings = request.args.get('toppings')
+    modification = request.args.get('modifications')
+    extra = request.args.get('Extra Information')
+    return render_template("cart.html", role = currentUser, toppings = toppings)
+
 
 
 
